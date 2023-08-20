@@ -103,7 +103,7 @@ def main():
     plt.quiver(arr_ground_truth[:, 0], arr_ground_truth[:, 1], diff[:, 0], diff[:, 1], angles='uv')
     plt.savefig(args.quiver_plot_path)
 
-    print(l2_diff(arr_estimated, arr_ground_truth, exclude_idxs))
+    print(f"Average l2 diff: {l2_diff(arr_estimated, arr_ground_truth, exclude_idxs):.3f}")
     l2 = ((arr_estimated - arr_ground_truth) ** 2).sum(axis=1)
     import ipdb; ipdb.set_trace()
 
